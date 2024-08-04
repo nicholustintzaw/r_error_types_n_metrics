@@ -108,7 +108,7 @@ grid.arrange(combined_plot,
 ################################################################################
 # Visualization 2: MSE and R-squared
 ################################################################################
-ggplot(mtcars, aes(x = fitted, y = residuals(model))) +
+ggplot(mtcars_segments, aes(x = fitted, y = residuals(model))) +
   geom_point() +
   geom_hline(yintercept = 0, linetype = "dashed", color = "red") +  # Zero line
   labs(title = "Residual Plot",
@@ -120,7 +120,7 @@ ggplot(mtcars, aes(x = fitted, y = residuals(model))) +
 mad <- mean(abs(residuals(model)))
 
 # Create the residual plot
-ggplot(mtcars, aes(x = fitted, y = residuals(model))) +
+ggplot(mtcars_segments, aes(x = fitted, y = residuals(model))) +
   geom_point() +
   geom_hline(yintercept = 0, linetype = "dashed", color = "red") +  # Zero line
   geom_hline(yintercept = mad, linetype = "dotted", color = "blue") +  # MAD line
